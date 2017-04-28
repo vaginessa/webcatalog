@@ -2,7 +2,6 @@
 
 const builder = require('electron-builder');
 const execFile = require('child_process').execFile;
-const electronVersion = require('./package.json').devDependencies.electron.substr(1);
 
 const { Platform, Arch } = builder;
 
@@ -28,7 +27,7 @@ switch (process.platform) {
 builder.build({
   targets,
   config: {
-    electronVersion,
+    muonVersion: '2.58.7',
     appId: 'com.webcatalog.app',
     files: [
       '!{scripts,src,website,tests,webpack.config.js}',
